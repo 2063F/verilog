@@ -7,7 +7,6 @@ module VGA_color(
     output reg [1:0] b
 );
 always @(posedge clk) begin
-    // まずデフォルト値を設定して、前の色が残らないようにします（ラッチ防止）
     r <= 0;
     g <= 0;
     b <= 0;
@@ -26,8 +25,7 @@ always @(posedge clk) begin
         10: b <= 2;
         11: b <= 3;
         default: begin 
-            // 余白（黒）
-            r <= 0; g <= 0; b <= 0; 
+            r <= 3; g <= 3; b <= 3; 
         end
     endcase
 end
