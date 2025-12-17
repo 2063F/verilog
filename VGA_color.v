@@ -2,16 +2,20 @@ module VGA_color(
     input wire clk,
     input wire [10:0] hcount,
     input wire [9:0] vcount,
-    output reg [1:0] r,
-    output reg [1:0] g,
-    output reg [1:0] b
+    output reg [1:0] 
+    h_r,
+    output reg [1:0] h_g,
+    output reg [1:0] h_b,
+    output reg [1:0] v_r,
+    output reg [1:0] v_g,
+    output reg [1:0] v_b
 );
 always @(posedge clk) begin
-    r <= 0;
-    g <= 0;
-    b <= 0;
+    h_r <= 0;
+    h_g <= 0;
+    h_b <= 0;
 
-    case(vcount / 32)
+    case(hcount / 32)
         0: r <= 0;
         1: r <= 1;
         2: r <= 2;
@@ -30,3 +34,4 @@ always @(posedge clk) begin
     endcase
 end
 endmodule
+
