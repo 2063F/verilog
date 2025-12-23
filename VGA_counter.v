@@ -10,8 +10,8 @@ module VGA_counter(
     output reg v_visible_area,
     output reg v_front_porch,
     output reg v_sync_pulse,
-    output reg v_back_porch
-
+    output reg v_back_porch,
+    output reg display_on
 );
     always @(posedge clk) begin
         if (reset == 1) begin
@@ -26,10 +26,6 @@ module VGA_counter(
         h_front_porch <= (hcount >= 11'd800 && hcount <= 11'd840);
         h_sync_pulse <= (hcount >= 11'd840 && hcount <= 11'd968);
         h_back_porch <= (hcount >= 11'd968 && hcount <= 11'd1056);
-       
-      end
-
- always @(posedge clk) begin
         if (reset == 1) begin
             vcount <= 0;
         end
@@ -40,7 +36,11 @@ module VGA_counter(
         v_front_porch <= (vcount >= 10'd0600 && vcount <= 10'd0601);
         v_sync_pulse <= (vcount >= 10'd0601 && vcount <= 10'd0605);
         v_back_porch <= (vcount >= 10'd0605 && vcount <= 10'd0628);
-
-      end
+if (vcount < 11'd800 && vcount < 10'd600) begin
+display_on <= 1;
+end else begin
+display_on <= 0;
+end
+end
 endmodule
     
