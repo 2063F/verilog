@@ -1,0 +1,40 @@
+# Tang Primer 25K ピン配置ファイル (.cst)
+# VGA出力用の設定
+
+# システムクロック (27MHz)
+IO_LOC "clk" H11;
+IO_PORT "clk" PULL_MODE=NONE;
+
+# リセットボタン (S1)
+IO_LOC "reset_btn" T10;
+IO_PORT "reset_btn" PULL_MODE=UP;
+
+# VGA 出力ピン (拡張コネクタ J5)
+# HSYNC
+IO_LOC "vga_hsync" E11;
+IO_PORT "vga_hsync" DRIVE=8;
+IO_PORT "vga_hsync" IO_TYPE=LVCMOS33;
+
+# VSYNC
+IO_LOC "vga_vsync" D11;
+IO_PORT "vga_vsync" DRIVE=8;
+IO_PORT "vga_vsync" IO_TYPE=LVCMOS33;
+
+# RED (白黒の場合は全て同じVIDEO信号を接続)
+IO_LOC "vga_r" C11;
+IO_PORT "vga_r" DRIVE=8;
+IO_PORT "vga_r" IO_TYPE=LVCMOS33;
+
+# GREEN
+IO_LOC "vga_g" B11;
+IO_PORT "vga_g" DRIVE=8;
+IO_PORT "vga_g" IO_TYPE=LVCMOS33;
+
+# BLUE
+IO_LOC "vga_b" A11;
+IO_PORT "vga_b" DRIVE=8;
+IO_PORT "vga_b" IO_TYPE=LVCMOS33;
+
+# 注意: 実際のピン配置はお使いの接続方法により異なります
+# Tang Primer 25Kの拡張ヘッダーに接続する場合は、
+# ピン番号を確認して調整してください
