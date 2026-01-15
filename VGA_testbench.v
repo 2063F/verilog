@@ -27,19 +27,26 @@ module VGA_testbench;
 
     // テストシーケンス
     initial begin
-        // 波形ダンプ
+        // 波形ダンプ（必要な信号のみ）
         $dumpfile("vga_test.vcd");
-        $dumpvars(0, VGA_testbench);
+        // レベル1のみダンプ（トップレベルの信号）
+        $dumpvars(1, VGA_testbench);
+        // 必要な内部信号のみ追加
+        $dumpvars(0, VGA_testbench.uut.h_count);
+        $dumpvars(0, VGA_testbench.uut.v_count);
+        $dumpvars(0, VGA_testbench.uut.display_on);
 
         // リセット
         reset = 1;
         #200;
         reset = 0;
 
-        // 数フレーム実行（約33ms × 3フレーム = 100ms）
-        #100_000_000;
+        // 数ライン分実行（約32μs × 6ライン = 200μs）
+        // HSYNC/VSYNCの基本動作確認には十分
+        #200_000;  // 200μs = 0.2ms（100ms → 200μsで500倍軽量化！）
 
         $display("テスト完了");
+        $display("シミュレーション時間: 200us（約6ライン分）");
         $finish;
     end
 
