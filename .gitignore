@@ -1,40 +1,54 @@
-/a.out
-/adder8.v
-/adder8_tb.v
-/basic.v
-/blink.sv
-/blink_tb.sv
-/db
-/FullAdder.v
-/HalfAdder.v
-/module question6-hint.v
-/module question6.v
-/module question7.v
-/module question8.v
-/module.v
-/problem1.v
-/problem1_tb.v
-/problem2.v
-/problem2_tb.v
-/problem3.v
-/problem3_tb.v
-/problem4.v
-/problem4_tb.v
-/problem5.ipinfo
-/problem5.qpf
-/problem5.qsf
-/problem5.qws
-/problem5.v
-/problem5_tb.v
-/question9.v
-/wave.vcd
-/Z16ALU.v
-/Z16ALU_tb.v
-/Z16CPU.v
-/Z16DataMemory.v
-/Z16DataMemory_tb.v
-/Z16Decoder.v
-/Z16InstrMemory.v
-/Z16InstrMemory_tb.v
-/Z16RegisterFile.v
-/Z16RegisterFile_tb.v
+# シミュレーション生成ファイル（一時ファイル）
+*.vcd
+*.vvp
+*.out
+
+# Icarus Verilog 生成ファイル
+vga_sim.vvp
+vga_quick.vvp
+vga_full.vvp
+
+# GTKWave一時ファイル
+*.gtkw.bak
+
+# FPGAツール生成ファイル
+# Quartus
+*.qws
+*.bak
+db/
+incremental_db/
+output_files/
+*.rpt
+*.summary
+*.smsg
+*.qarlog
+
+# Vivado
+*.jou
+*.log
+*.str
+*.xpr
+.Xil/
+*.cache/
+*.runs/
+*.hw/
+*.ip_user_files/
+
+# Gowin EDA
+*.gprj.user
+impl/
+*.rao
+*.tr
+*.ddb
+
+# OS生成ファイル
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# エディタ一時ファイル
+*~
+*.swp
+*.swo
+.vscode/
+.idea/
