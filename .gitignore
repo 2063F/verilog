@@ -52,3 +52,5 @@ desktop.ini
 *.swo
 .vscode/
 .idea/
+# .gitignore に追加
+*.vcd
