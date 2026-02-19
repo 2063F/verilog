@@ -2,6 +2,14 @@
  "Device" : "GW5A-25B",
  "Files" : [
   {
+   "Path" : "C:/Users/asami/Documents/verilog/VGA_BW_Tang25K/VGA_BW_first_Tang25K.v",
+   "Type" : "verilog"
+  },
+  {
+   "Path" : "C:/Users/asami/Documents/verilog/VGA_BW_Tang25K/VGA_BW_simple.v",
+   "Type" : "verilog"
+  },
+  {
    "Path" : "C:/Users/asami/Documents/verilog/src/gowin_pll/gowin_pll.v",
    "Type" : "verilog"
   },
@@ -10,7 +18,7 @@
    "Type" : "verilog"
   },
   {
-   "Path" : "C:/Users/asami/Documents/verilog/src/pll_init.v",
+   "Path" : "C:/Users/asami/Documents/verilog/pll_init.v",
    "Type" : "verilog"
   }
  ],
@@ -19,7 +27,7 @@
  ],
  "LoopLimit" : 2000,
  "ResultFile" : "C:/Users/asami/Documents/verilog/impl/temp/rtl_parser.result",
- "Top" : "",
+ "Top" : "VGA_BW_top",
  "VerilogStd" : "verilog_2001",
  "VhdlStd" : "vhdl_93"
 }

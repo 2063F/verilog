@@ -55,13 +55,13 @@ module VGA_BW_simple(
 
     // 同期信号生成
     always @(posedge clk_25mhz) begin
-        // HSYNC: 負極性
-        hsync <= (h_count >= (H_DISPLAY + H_FRONT_PORCH)) && 
-                 (h_count < (H_DISPLAY + H_FRONT_PORCH + H_SYNC_PULSE));
+        // HSYNC: 負極性 (同期パルス中 = 0, それ以外 = 1)
+        hsync <= !((h_count >= (H_DISPLAY + H_FRONT_PORCH)) && 
+                   (h_count < (H_DISPLAY + H_FRONT_PORCH + H_SYNC_PULSE)));
         
-        // VSYNC: 負極性
-        vsync <= (v_count >= (V_DISPLAY + V_FRONT_PORCH)) && 
-                 (v_count < (V_DISPLAY + V_FRONT_PORCH + V_SYNC_PULSE));
+        // VSYNC: 負極性 (同期パルス中 = 0, それ以外 = 1)
+        vsync <= !((v_count >= (V_DISPLAY + V_FRONT_PORCH)) && 
+                   (v_count < (V_DISPLAY + V_FRONT_PORCH + V_SYNC_PULSE)));
     end
 
     // 映像信号生成（テストパターン）

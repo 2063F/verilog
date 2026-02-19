@@ -1,5 +1,23 @@
 [
  {
+  "InstFile" : "C:/Users/asami/Documents/verilog/VGA_BW_Tang25K/VGA_BW_first_Tang25K.v",
+  "InstLine" : 3,
+  "InstName" : "VGA_BW_top",
+  "ModuleFile" : "C:/Users/asami/Documents/verilog/VGA_BW_Tang25K/VGA_BW_first_Tang25K.v",
+  "ModuleLine" : 3,
+  "ModuleName" : "VGA_BW_top",
+  "SubInsts" : [
+   {
+    "InstFile" : "C:/Users/asami/Documents/verilog/VGA_BW_Tang25K/VGA_BW_first_Tang25K.v",
+    "InstLine" : 31,
+    "InstName" : "vga_core",
+    "ModuleFile" : "C:/Users/asami/Documents/verilog/VGA_BW_Tang25K/VGA_BW_simple.v",
+    "ModuleLine" : 3,
+    "ModuleName" : "VGA_BW_simple"
+   }
+  ]
+ },
+ {
   "InstFile" : "C:/Users/asami/Documents/verilog/src/gowin_pll/gowin_pll.v",
   "InstLine" : 1,
   "InstName" : "Gowin_PLL",
@@ -19,7 +37,7 @@
     "InstFile" : "C:/Users/asami/Documents/verilog/src/gowin_pll/gowin_pll.v",
     "InstLine" : 34,
     "InstName" : "u_pll_init",
-    "ModuleFile" : "C:/Users/asami/Documents/verilog/src/pll_init.v",
+    "ModuleFile" : "C:/Users/asami/Documents/verilog/pll_init.v",
     "ModuleLine" : 4,
     "ModuleName" : "PLL_INIT"
    }

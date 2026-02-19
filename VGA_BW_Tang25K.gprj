@@ -5,8 +5,12 @@
     <Version>5</Version>
     <Device name="GW5A-25B" pn="GW5A-LV25MG121NC1/I0">gw5a25b-003</Device>
     <FileList>
+        <File path="VGA_BW_Tang25K/VGA_BW_first_Tang25K.v" type="file.verilog" enable="1"/>
+        <File path="VGA_BW_Tang25K/VGA_BW_simple.v" type="file.verilog" enable="1"/>
         <File path="src/gowin_pll/gowin_pll.v" type="file.verilog" enable="1"/>
         <File path="src/gowin_pll/gowin_pll_mod.v" type="file.verilog" enable="1"/>
-        <File path="src/pll_init.v" type="file.verilog" enable="1"/>
+        <File path="pll_init.v" type="file.verilog" enable="1"/>
+        <File path="VGA_BW_Tang25K/Tang_Primer_25K_VGA.cst" type="file.cst" enable="1"/>
+        <File path="VGA_BW_Tang25K/Tang_Primer_25K_VGA.sdc" type="file.sdc" enable="1"/>
     </FileList>
 </Project>
