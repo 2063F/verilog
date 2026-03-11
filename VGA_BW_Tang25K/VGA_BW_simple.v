@@ -52,7 +52,7 @@ module VGA_BW_simple(
             end
         end
     end
-
+//
     // 同期信号生成
     always @(posedge clk_25mhz) begin
         // HSYNC: 負極性 (同期パルス中 = 0, それ以外 = 1)
