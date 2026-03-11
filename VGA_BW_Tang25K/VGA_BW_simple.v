@@ -5,7 +5,7 @@ module VGA_BW_simple(
     input wire reset,          // リセット信号
     output reg hsync,          // 水平同期信号
     output reg vsync,          // 垂直同期信号
-    output reg video           // 白黒映像信号（1=白、0=黒）
+    output reg[2:0] video_rgb          // 白黒映像信号（1=白、0=黒）
 );
 
     // VGAタイミングパラメータ（640x480@60Hz）
@@ -71,12 +71,23 @@ module VGA_BW_simple(
     always @(posedge clk_25mhz) begin
         if (display_on) begin
             // テストパターン：市松模様
-            video <= h_count[5] ^ v_count[5];
+            //video <= h_count[5] ^ v_count[5];
             
             // 他のパターン例：
             // video <= 1;  // 全画面白
             // video <= (h_count < 320);  // 左半分白、右半分黒
             // video <= (v_count < 240);  // 上半分白、下半分黒
+            //8色カラーバー
+            if (h_count < 80) video_rgb <= 3'b111;
+            else if (h_count < 160) video_rgb <= 3'b110;
+            else if (h_count < 240) video_rgb <= 3'b011;
+            else if (h_count < 320) video_rgb <= 3'b010;
+            else if (h_count < 400) video_rgb <= 3'b101;
+            else if (h_count < 480) video_rgb <= 3'b100;
+            else if (h_count < 560) video_rgb <= 3'b001;
+            else video_rgb <= 3'b000;
+
+           
         end else begin
             video <= 0;  // ブランキング期間は黒
         end

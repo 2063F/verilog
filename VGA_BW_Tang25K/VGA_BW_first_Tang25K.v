@@ -8,8 +8,8 @@ module VGA_BW_top(
     output wire vga_r,         // VGA赤信号
     output wire vga_g,         // VGA緑信号
     output wire vga_b,         // VGA青信号
-    output wire led            // 動作確認用LED (Pin D10)
-);
+    output wire led,    // 動作確認用LED (Pin D10)
+    );
 
     // リセット信号を反転 (プルアップ環境でボタンを押すと0[リセット])
     wire sys_reset = !reset_btn; 
@@ -33,12 +33,12 @@ module VGA_BW_top(
         .reset(sys_reset),
         .hsync(vga_hsync),
         .vsync(vga_vsync),
-        .video(video_signal)
+         wire [2:0] color_signal
     );
 
     // 映像信号接続
-    assign vga_r = video_signal;
-    assign vga_g = video_signal;
-    assign vga_b = video_signal;
+    assign vga_r = color_signal[2];
+    assign vga_g = color_signal[1];
+    assign vga_b = color_signal[0];
 
 endmodule
